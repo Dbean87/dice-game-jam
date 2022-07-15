@@ -1,0 +1,124 @@
+*, *::before, *::after {
+     box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    background-color: #333;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    
+    background-color: black;
+    outline: solid white 1px;
+}
+
+#dice-container{
+    width: 100px;
+    outline: solid white 1px;
+    height: 600px;;
+}
+
+#death-dice {
+    height: 60px;
+    width: 60px;
+    background-color: white;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding: 5px;
+    transition: all 500ms ease;
+    border-radius: 2px;
+}
+
+.spot{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: black;
+    transition: opacity 600ms ease;
+
+}
+
+.hide{
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* 1 spots  */
+#death-dice[data-face="1"] .spot:not(:nth-child(5n)){
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* 2spots */
+#death-dice[data-face="2"] .spot:not(:nth-child(-4n+7)){
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* 3spots */
+#death-dice[data-face="3"] .spot:not(:nth-child(-4n+9)){
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* 4spots */
+#death-dice[data-face="4"] .spot[data-spot="4"], #death-dice[data-face="4"]  .spot[data-spot="5"], #death-dice[data-face="4"]  .spot[data-spot="6"] {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* 5 spots */
+#death-dice[data-face="5"] .spot:nth-child(2n){
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* 6 spots*/
+#death-dice[data-face="6"] .spot:nth-child(5n){
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+button{
+    margin: auto;
+    text-align: center;
+    display: block;
+    width: 60px;
+    text-transform: uppercase;
+    border-radius: 0;
+    border: none;
+    padding: 3px 5px;
+    cursor:pointer;
+    font-weight: bold;
+    background-color: white;
+    font-size: 18px;
+}
+
+button.animate {
+    animation: shake 800ms ease-in-out;
+}
+
+@keyframes shake {
+    0% { transform: rotate(0deg) scale(1.1) ; }
+    5% { transform: rotate(2deg) scale(1.1); }
+    10% { transform: rotate(-2deg) scale(1.1); }
+    20% { transform: rotate(2deg) scale(1.2); }
+    30% { transform: rotate(-2deg) scale(1.2); }
+    40% { transform: rotate(2deg) scale(1.2); }
+    50% { transform: rotate(-2deg) scale(1.3); }
+    60% { transform: rotate(2deg) scale(1.3); }
+    70% { transform: rotate(-2deg)scale(1.2); }
+    80% { transform: rotate(2deg)scale(1.2); }
+    85% { transform: rotate(-2deg)scale(1.2); }
+    95% { transform: rotate(2deg)scale(1.2); }
+   100% { transform: rotate(0deg) scale(1.1); }
+}
+
