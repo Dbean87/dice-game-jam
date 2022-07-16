@@ -19,8 +19,8 @@ canvas {
 
 #dice-container{
     width: 100px;
+    height: 480px;;
     outline: solid white 1px;
-    height: 600px;;
 }
 
 #death-dice {
@@ -122,3 +122,17 @@ button.animate {
    100% { transform: rotate(0deg) scale(1.1); }
 }
 
+
+/* debug */
+
+.debug {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    padding: 30px;
+    color: magenta;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    top: 0;
+    left:0
+}

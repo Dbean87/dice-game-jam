@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <canvas id="main-canvas" width="800" height="600"></canvas>
+    <canvas id="canvas" width="800" height="480"></canvas>
     <div id="dice-container">
         <div id="death-dice" data-face="6">
             <div class="spot" data-spot="1"></div>
@@ -27,6 +27,9 @@
         <button id="roll" class="animate" >Roll</button>
     </div>
 
+    <div class="debug"></div>
+
+    <script src="/src/utils.js"></script>
     <script type="module" src="/src/main.js"></script>
     
 </body>

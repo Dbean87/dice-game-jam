@@ -17,6 +17,5 @@ export default class DiceController {
         this.element.setAttribute('data-face' ,rand )
         this.rolls++
         this.element.style.transform = `rotate(${this.rolls* 360}deg)`
-
     }
 }
